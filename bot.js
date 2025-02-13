@@ -348,7 +348,7 @@ bot.onText(/\/exel/, async (msg) => {
     { header: "Статус", key: "status", width: 20 },
     { header: "Заявка Дата", key: "createdDate", width: 15 },
     { header: "Время в Заявке", key: "createdTime", width: 15 },
-    { header: "Адрес", key: "address", width: 30 },
+    // { header: "Адрес", key: "address", width: 30 },
     { header: "Завершившееся время", key: "fixedAt", width: 20 },
   ];
 

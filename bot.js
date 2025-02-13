@@ -12,11 +12,111 @@ const statuses = {
   rejected: "❌ Rad etilgan",
 };
 
-const branches = ["Filial 1", "Filial 2", "Filial 3"];
+const branches = [
+  "T001 Глазной",
+  "T002 Охунбобоев",
+  "T003 Yunusobod",
+  "T005 Ташми",
+  "T007 Кораташ",
+  "T009 Сергели Корзинка",
+  "T010 Куйлик",
+  "T012 Бодомзор",
+  "T015 Лабзак",
+  "T016 Чимган",
+  "T018 Кукча",
+  "T020 Сергели Дустлик",
+  "T024 16 Гор. боль.",
+  "T027 Алайский",
+  "T028 Глинка макро",
+  "T029 Такачи",
+  "T030 Фаргона Макро",
+  "T032 Бибигон",
+  "T034 Самарканд дарвоза РОВД",
+  "T036 Жуковский Неотложка",
+  "T037 Юнусобод (Биллур)",
+  "T040 Шахристанский",
+  "T045 Кушбеги (Хавас)",
+  "T046 Фархадский",
+  "T047 Юнусобод (Хавас) 17кв",
+  "T048 ТТЗ Акушерство Гинекологии",
+  "T049 Водник Корзинка",
+  "T050 Юнусобод Уста Ширин",
+  "T051 Ангрен",
+  "T053 Бекобод",
+  "T055 Юнусобод 7 кв",
+  "T056 Мирзо Улугбек (налоговый)",
+  "T057 Янги Ташми (Роддом)",
+  "T059 Бекобод (2)",
+  "T060 Универсам Юнусобод",
+  "T061 Ганга Хадра Маркет",
+  "T062 Онкология",
+  "T064 Янги Йул",
+  "T065 Максим Горький",
+  "T066 Тапоич Больница",
+  "T067 Солдатский",
+  "T068 Янги Тошми Куксарой",
+  "T069 1 Гор. Больница (Роддом)",
+  "T070 Чилонзор Гагарин",
+  "T071 Фархадский Базар Макро",
+  "T072 Кадышева Базар",
+  "T073 Куйлик 29-поликлиника",
+  "T074 ТТЗ Базар банк",
+  "T075 Кадишева перекресток",
+  "T076 Чирчик Макро",
+  "T078 Сергели Янги хает",
+  "T079 Куйлик 2-поликлиника",
+  "T081 Рисовый Роддом",
+  "T082 Максим Горький метро",
+  "T084 Сампи Скрининг центр",
+  "T085 ТТЗ Навруз Бозор конечка",
+  "T086 Ц5 Корзинка",
+  "T087 Шухрат Корзинка",
+  "T089 Чирчик Макро Клиника",
+  "T006 Сергели спутник",
+  "T090 Тансикбоев кора/камиш",
+  "T091 Куйлик Мост",
+  "T092 Янги йуль 2 астанофка",
+  "T093 Чиланзор 21 кв",
+  "T094 Янги йуль раддом",
+  "T095 Чирчик 9 мактаб",
+  "T096 Пскент",
+  "T097 Солдацкий 2",
+  "T098 Келес куктерак",
+  "T099 Беруни (эко бозор)",
+  "T102 Транспортный",
+  "T103 Охунбобоев 2",
+  "T104 Дубовский",
+  "T105 Чиноз",
+  "T106 Чирчик (октябрьский бозор)",
+  "T107 медгарадок",
+  "T108 Кадишева Конечка (хавас)",
+  "T109 Фархадский автозапчасти",
+  "T111 Чилонзор 23 кв (7777)",
+  "T113 Янгиобод (карзинка)",
+  "T114 Лисунова (хавас)",
+  "T115 Рисовый Махалла",
+  "T116 Юнусобод Мега",
+  "T117 Хасанбой Абдурахмон",
+  "T118 Ташмори бозор",
+  "T119 Водник 2",
+  "T120 Янги обод",
+  "T121 Янги обод 2",
+  "T122 Жума бозор",
+  "T123 Гулистон",
+  "T124 Ғунча",
+  "T125 Паркент",
+  "T126 Сергили карзинка",
+  "T127 Корокамиш 1/2 бозор",
+  "T128 Келес бозор",
+];
 const categories = [
-  { type: "Elektr", contact: "https://t.me/akhmad_x1" },
-  { type: "Suv", contact: "https://t.me/akhmad_x1" },
-  { type: "Internet", contact: "https://t.me/akhmad_x1" },
+  { type: "Електор", contact: "https://t.me/Qosimov0004" },
+  { type: "Сув", contact: "https://t.me/Qosimov0004" },
+  { type: "Интернет", contact: "https://t.me/Qosimov0004" },
+  {type: "Проче", contact: "https://t.me/Qosimov0004"},
+  {type: "Офисе", contact: "https://t.me/Qosimov0004"},
+  {type: "Мебел", contact: "https://t.me/Qosimov0004"},
+  {type: "Алока", contact: "https://t.me/Qosimov0004"}
 ];
 
 const userRequests = {};
@@ -102,8 +202,7 @@ bot.on("message", async (msg) => {
   // 4. Получение локации
   if (msg.location) {
     userRequests[userId].location = msg.location;
-    // Если в объекте локации есть адрес (например, при отправке места), используем его,
-    // иначе формируем адрес из координат.
+    // Если в объекте локации есть адрес – используем его, иначе формируем его из координат
     userRequests[userId].address =
       msg.location.address || `${msg.location.latitude}, ${msg.location.longitude}`;
     bot.sendMessage(userId, "✅ Lokatsiyangiz qabul qilindi. Endi muammo rasmini yuboring.");
@@ -115,7 +214,7 @@ bot.on("message", async (msg) => {
     if (!userRequests[userId] || !userRequests[userId].category) {
       return bot.sendMessage(userId, "Avval filial va kategoriya tanlang!");
     }
-    // Берём последнюю (наилучшую по качеству) фотографию
+    // Берем последнюю фотографию (наилучшего качества)
     const photoFileId = msg.photo[msg.photo.length - 1].file_id;
     userRequests[userId].photo = photoFileId;
     bot.sendMessage(userId, "✍️ Endi muammo haqida qisqacha yozing.");
@@ -127,20 +226,19 @@ bot.on("message", async (msg) => {
     userRequests[userId].text = text;
     // Сохраняем время создания заявки и присваиваем уникальный ID
     userRequests[userId].createdAt = new Date();
-    userRequests[userId].id = Date.now().toString(); // уникальный идентификатор
+    userRequests[userId].id = Date.now().toString();
 
-    // Формируем объект заявки
+    // Формируем объект заявки и, при необходимости, формируем адрес из координат
     const request = { ...userRequests[userId], userId, status: statuses.accepted };
-    // Если по какой-то причине адрес не был сохранён, формируем его из координат
     if (request.location && !request.address) {
       request.address = `${request.location.latitude}, ${request.location.longitude}`;
     }
+    // Добавляем заявку в общий массив – новые заявки добавляются (не затирая предыдущие)
     allRequests.push(request);
 
     bot.sendMessage(userId, "✅ Zayavka qabul qilindi!");
 
-    // Отправляем заявку в группу с inline-кнопками для изменения статуса.
-    // Здесь callback_data содержит уникальный id заявки.
+    // Отправляем заявку в группу с inline-кнопками для изменения статуса
     bot.sendPhoto(GROUP_ID, request.photo, {
       caption:
         `📍 <b>Filial:</b> ${request.filial}\n` +
@@ -155,7 +253,7 @@ bot.on("message", async (msg) => {
       reply_markup: {
         inline_keyboard: [
           [{ text: "✔️ Бажарилди", callback_data: `complete_${request.id}` }],
-          [{ text: "❌ Рад этилган", callback_data: `reject_${request.id}` }],
+          [{ text: "❌ Rad etilgan", callback_data: `reject_${request.id}` }],
         ],
       },
     });
@@ -166,7 +264,7 @@ bot.on("message", async (msg) => {
   }
 });
 
-// Обработчик inline-кнопок (смена статуса заявки)
+// Обработчик inline-кнопок для смены статуса заявки
 bot.on("callback_query", async (callbackQuery) => {
   const msg = callbackQuery.message;
   const data = callbackQuery.data;
@@ -182,11 +280,10 @@ bot.on("callback_query", async (callbackQuery) => {
 
   if (newStatus) {
     const requestId = data.split("_")[1];
-    // Находим заявку по уникальному id
+    // Находим заявку по уникальному ID
     const req = allRequests.find((r) => r.id === requestId);
     if (req) {
       req.status = newStatus;
-      // Сохраняем время обработки заявки
       req.fixedAt = new Date();
 
       const updatedMessage =
@@ -202,7 +299,7 @@ bot.on("callback_query", async (callbackQuery) => {
 
       bot.sendMessage(req.userId, updatedMessage, { parse_mode: "HTML" });
 
-      // Обновляем подпись (caption) сообщения в группе
+      // Обновляем подпись сообщения в группе
       let newCaption = msg.caption.replace(
         /📊 <b>Status:<\/b> .*\n/,
         `📊 <b>Status:</b> ${req.status}\n`
@@ -231,7 +328,8 @@ bot.on("callback_query", async (callbackQuery) => {
 });
 
 // Команда /exel – экспорт всех заявок в Excel.
-// В файле будут присутствовать все заявки (как ранее, так и последующие).
+// В Excel-файле (PDF) добавляются все заявки, накопленные в массиве allRequests,
+// включая новую колонку "Контакт", в которой указывается ссылка, соответствующая выбранной категории.
 bot.onText(/\/exel/, async (msg) => {
   const chatId = msg.chat.id;
   if (allRequests.length === 0) {
@@ -243,40 +341,33 @@ bot.onText(/\/exel/, async (msg) => {
 
   worksheet.columns = [
     { header: "User ID", key: "userId", width: 15 },
-    { header: "Filial", key: "filial", width: 30 },
-    { header: "Kategoriya", key: "category", width: 20 },
-    { header: "Muammo", key: "text", width: 40 },
-    { header: "Status", key: "status", width: 20 },
-    { header: "Zayavka Sana", key: "createdDate", width: 15 },
-    { header: "Zayavka Vaqti", key: "createdTime", width: 15 },
-    { header: "Manzil", key: "address", width: 30 },
-    { header: "Tugatildi Vaqti", key: "fixedAt", width: 20 },
+    { header: "Ветвь", key: "filial", width: 30 },
+    { header: "Категория", key: "category", width: 20 },
+    { header: "Контакт", key: "contact", width: 30 },
+    { header: "Проблема", key: "text", width: 40 },
+    { header: "Статус", key: "status", width: 20 },
+    { header: "Заявка Дата", key: "createdDate", width: 15 },
+    { header: "Время в Заявке", key: "createdTime", width: 15 },
+    { header: "Адрес", key: "address", width: 30 },
+    { header: "Завершившееся время", key: "fixedAt", width: 20 },
   ];
 
   allRequests.forEach((req) => {
     const createdAt = new Date(req.createdAt);
-    const createdDate = `${String(createdAt.getDate()).padStart(2, "0")}.${String(
-      createdAt.getMonth() + 1
-    ).padStart(2, "0")}.${createdAt.getFullYear()}`;
-    const createdTime = `${String(createdAt.getHours()).padStart(2, "0")}:${String(
-      createdAt.getMinutes()
-    ).padStart(2, "0")}:${String(createdAt.getSeconds()).padStart(2, "0")}`;
+    const createdDate = `${String(createdAt.getDate()).padStart(2, "0")}.${String(createdAt.getMonth() + 1).padStart(2, "0")}.${createdAt.getFullYear()}`;
+    const createdTime = `${String(createdAt.getHours()).padStart(2, "0")}:${String(createdAt.getMinutes()).padStart(2, "0")}:${String(createdAt.getSeconds()).padStart(2, "0")}`;
 
     let fixedAtFormatted = "";
     if (req.fixedAt) {
       const fixedAt = new Date(req.fixedAt);
-      fixedAtFormatted = `${String(fixedAt.getDate()).padStart(2, "0")}.${String(
-        fixedAt.getMonth() + 1
-      ).padStart(2, "0")}.${fixedAt.getFullYear()} ${String(fixedAt.getHours()).padStart(
-        2,
-        "0"
-      )}:${String(fixedAt.getMinutes()).padStart(2, "0")}:${String(fixedAt.getSeconds()).padStart(2, "0")}`;
+      fixedAtFormatted = `${String(fixedAt.getDate()).padStart(2, "0")}.${String(fixedAt.getMonth() + 1).padStart(2, "0")}.${fixedAt.getFullYear()} ${String(fixedAt.getHours()).padStart(2, "0")}:${String(fixedAt.getMinutes()).padStart(2, "0")}:${String(fixedAt.getSeconds()).padStart(2, "0")}`;
     }
 
     worksheet.addRow({
       userId: req.userId,
       filial: req.filial,
       category: req.category,
+      contact: req.contact || "",
       text: req.text,
       status: req.status,
       createdDate: createdDate,

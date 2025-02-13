@@ -2,7 +2,7 @@ const TelegramBot = require("node-telegram-bot-api");
 const fs = require("fs");
 const ExcelJS = require("exceljs");
 
-const TOKEN = "7390473104:AAE27j-Nofeu3n2AnzMYLF-Z8FEplCdIKPo";
+const TOKEN = "7390473104:AAEertSXCESAGXjFmhoWT9hInRdg7rAXzbQ";
 const GROUP_ID = -1002466999228;
 const bot = new TelegramBot(TOKEN, { polling: true });
 

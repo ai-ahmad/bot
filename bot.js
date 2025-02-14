@@ -110,13 +110,12 @@ const branches = [
   "T128 Келес бозор",
 ];
 const categories = [
-  { type: "Електор", contact: "https://t.me/Qosimov0004" },
-  { type: "Сув", contact: "https://t.me/Qosimov0004" },
-  { type: "Интернет", contact: "https://t.me/Qosimov0004" },
-  {type: "Проче", contact: "https://t.me/Qosimov0004"},
-  {type: "Офисе", contact: "https://t.me/Qosimov0004"},
-  {type: "Мебел", contact: "https://t.me/Qosimov0004"},
-  {type: "Алока", contact: "https://t.me/Qosimov0004"}
+  { type: "Офис билан богланиш", contact: "https://t.me/potomnapishuu" },
+  { type: "Электрик", contact: "https://t.me/Qosimov0004" },
+  { type: "Сантехник", contact: "https://t.me/Qosimov0004" },
+  {type: "Мебель", contact: "https://t.me/Qosimov0004"},
+  {type: "Терминал", contact: "https://t.me/Qosimov0004"},
+  {type: "Прочее", contact: "https://t.me/Qosimov0004"},
 ];
 
 const userRequests = {};
